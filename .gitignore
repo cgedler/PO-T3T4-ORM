@@ -50,6 +50,21 @@ yarn-error.log*
 /CSharp/SistemaAcademico/bin/Debug/net8.0/
 /CSharp/SistemaAcademico/obj/Debug/net8.0/
 
+[Bb]in/
+[Oo]j/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Paquetes y dependencias
+packages/
+node_modules/
+bower_components/
+
 # Python
 
 /Python/venv/
