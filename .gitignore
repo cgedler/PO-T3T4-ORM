@@ -45,12 +45,18 @@ yarn-error.log*
 *.user
 *.puml
 
-/CSharp/SistemaAcademico/bin
-/CSharp/SistemaAcademico/obj
+/CSharp/SistemaAcademico/bin/
+/CSharp/SistemaAcademico/obj/
+/CSharp/SistemaAcademico/bin/Debug/net8.0/
+/CSharp/SistemaAcademico/obj/Debug/net8.0/
 
 # Python
 
 /Python/venv/
+/Python/miproyecto/miproyecto/__pycache__/
+/Python/miproyecto/GestionAlumnos/__pycache__/
+/Python/miproyecto/GestionAlumnos/__pycache__/
+
 *.pyc
 
 # Django #
@@ -59,6 +65,7 @@ yarn-error.log*
 *.pyc
 __pycache__
 db.sqlite3
+*db.sqlite3
 
  Visual Studio Code # 
 .vscode/* 
