@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Estudiantes e Inscripciones</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2 class="mb-4">Control de Inscripciones Académicas</h2>
+    
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Cédula</th>
+                <th>Estudiante</th>
+                <th>Materias Inscritas</th>
+                <th>Profesores Asignados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+            <tr>
+                <td>{{ estudiante.cedula }}</td>
+                <td><strong>{{ estudiante.nombre }}</strong></td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for materia in estudiante.materias.all %}
+                            <li>{{ materia.nombre }} ({{ materia.codigo }})</li>
+                        {% empty %}
+                            <li class="text-muted">Sin materias</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for materia in estudiante.materias.all %}
+                            <li>{{ materia.profesor.nombre }} {{ materia.profesor.apellido }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
