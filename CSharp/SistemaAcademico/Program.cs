@@ -27,6 +27,10 @@ builder.Services.AddAuthentication(x => {
     };
 });
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowAngular",
+        policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
 
 // REGISTRAR LOS SERVICIOS DE CONTROLADORES
 builder.Services.AddControllers();
@@ -35,6 +39,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<UniversidadContext>();
 
 var app = builder.Build();
+
+app.UseCors("AllowAngular");
 
 app.UseAuthentication(); // ¿Quién eres?
 app.UseAuthorization();  // ¿A qué tienes permiso?

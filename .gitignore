@@ -7,6 +7,11 @@
 /.angular/
 .angular/
 
+/FrontEnd/sistema-academico-web/node_modules/
+/FrontEnd/sistema-academico-web/.angular/
+/FrontEnd/sistema-academico-web/.vscode/
+/FrontEnd/sistema-academico-web/.gitignore
+
 # Node modules and dependency files
 /node_modules/
 /package-lock.json
@@ -50,6 +55,8 @@ yarn-error.log*
 /CSharp/SistemaAcademico/bin/Debug/net8.0/
 /CSharp/SistemaAcademico/obj/Debug/net8.0/
 
+/CSharp/SistemaAcademico/bin/Debug/net8.0/SistemaAcademico.dll/
+
 [Bb]in/
 [Oo]j/
 [Oo]bj/
@@ -71,6 +78,7 @@ bower_components/
 /Python/miproyecto/miproyecto/__pycache__/
 /Python/miproyecto/GestionAlumnos/__pycache__/
 /Python/miproyecto/GestionAlumnos/__pycache__/
+/Python/miproyecto/db.sqlite3/
 
 *.pyc
 
@@ -89,3 +97,4 @@ db.sqlite3
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+Online.sln

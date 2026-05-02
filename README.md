@@ -191,7 +191,7 @@ ng generate service services/estudiante
 
 ### 5. El HTML
 
-### 6 Crear los componente listado y formulario
+### 6. Crear los componente listado y formulario
 
 ```shell
 ng generate component lista-estudiantes
@@ -199,9 +199,9 @@ ng generate component lista-estudiantes
 ng generate component formulario-estudiante
 ```
 
-### 7 Configurar CORS
+### 7. Configurar CORS
 
-### 8 Ejecutar
+### 8. Ejecutar
 
 ```shell
 ng serve --open

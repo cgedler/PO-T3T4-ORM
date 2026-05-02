@@ -1,0 +1,95 @@
+
+/* Contenedor general */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background-color: #f9fafc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Título */
+.container h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Etiquetas y campos */
+label {
+  font-weight: 600;
+  color: #34495e;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efectos de foco */
+input[type="text"]:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 5px rgba(0, 120, 212, 0.3);
+  outline: none;
+}
+
+/* Mensajes de validación */
+small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+small[style*="color: red"] {
+  color: #e74c3c !important;
+}
+
+small:not([style*="color: red"]) {
+  color: #2ecc71;
+}
+
+/* Botón */
+button[type="submit"] {
+  align-self: center;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Separador */
+hr {
+  margin-top: 30px;
+  border: none;
+  border-top: 1px solid #ddd;
+}

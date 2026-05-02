@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Lista de Estudiantes (Desde .NET 8)</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (e of estudiantes; track e.id) {
+            <tr>
+                <td>{{ e.nombre }}</td>
+                <td>{{ e.cedula }}</td>
+            </tr>
+            } @empty {
+            <tr>
+                <td colspan="2">No hay estudiantes registrados.</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!--
+
+<tr *ngFor="let e of estudiantes">
+  <td>{{ e.nombre }}</td>
+</tr>
+
+-->
