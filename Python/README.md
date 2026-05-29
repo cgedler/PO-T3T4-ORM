@@ -64,23 +64,23 @@ django-admin startapp GestionAlumnos
 ```shell
 miproyecto/               # Carpeta contenedora principal
 │
-├── manage.py             # Utilidad de l&#237;nea de comandos para administrar el proyecto
+├── manage.py             # Utilidad de línea de comandos para administrar el proyecto
 │
-├── miproyecto/           # Carpeta de configuraci&#243;n global del proyecto
+├── miproyecto/           # Carpeta de configuración global del proyecto
 │   ├── __init__.py       # Archivo que indica que este directorio es un paquete Python
-│   ├── settings.py       # Configuraci&#243;n principal (base de datos, apps instaladas, etc.)
+│   ├── settings.py       # Configuración principal (base de datos, apps instaladas, etc.)
 │   ├── urls.py           # Enrutador de URLs a nivel de proyecto
-│   ├── asgi.py           # Configuraci&#243;n para despliegue as&#237;ncrono
-│   └── wsgi.py           # Configuraci&#243;n para despliegue web tradicional
+│   ├── asgi.py           # Configuración para despliegue asíncrono
+│   └── wsgi.py           # Configuración para despliegue web tradicional
 │
-└── GestionAlumnos/       # Carpeta de una aplicaci&#243;n espec&#237;fica (ej. usuarios, blog)
+└── GestionAlumnos/       # Carpeta de una aplicación específica (ej. usuarios, blog)
     ├── migrations/       # Carpeta con los archivos de historial de la base de datos
     ├── __init__.py
-    ├── admin.py          # Registro de modelos para el panel de administraci&#243;n
-    ├── apps.py           # Configuraci&#243;n espec&#237;fica de la aplicaci&#243;n
-    ├── models.py         # Definici&#243;n de las estructuras de datos (Base de datos)
+    ├── admin.py          # Registro de modelos para el panel de administración
+    ├── apps.py           # Configuración específica de la aplicación
+    ├── models.py         # Definición de las estructuras de datos (Base de datos)
     ├── tests.py          # Pruebas unitarias
-    ├── views.py          # L&#243;gica de negocio (vistas de tu aplicaci&#243;n)
+    ├── views.py          # Lógica de negocio (vistas de tu aplicación)
     └── forms.py          # Este archivo te permite capturar, validar y procesar datos enviados por los usuarios de una manera segura y eficiente.
 ```
 
@@ -135,7 +135,7 @@ class MateriaAdmin(admin.ModelAdmin):
 class EstudianteAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'cedula')
     search_fields = ('nombre', 'cedula')
-    # Esto permite seleccionar las materias de forma mucho m&#225;s c&#243;moda
+    # Esto permite seleccionar las materias de forma mucho más cómoda
     filter_horizontal = ('materias',)
 ```
 
