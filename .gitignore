@@ -43,7 +43,7 @@ yarn-error.log*
 *.json
 *.exe
 *.pdb
-*.config
+*.configpdb
 *.txt
 *.Up2Date
 *.pubxml
@@ -98,3 +98,4 @@ db.sqlite3
 !.vscode/extensions.json 
 .history
 Online.sln
+CSharp/SistemaAcademico/obj/Debug/net8.0/SistemaAcademico.AssemblyInfoInputs.cache

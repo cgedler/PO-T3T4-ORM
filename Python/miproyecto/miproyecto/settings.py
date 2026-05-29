@@ -73,12 +73,11 @@ WSGI_APPLICATION = 'miproyecto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+import miproyecto.db as db
+#DATABASES = db.POSTGRESQL
+DATABASES = db.SQLITE
+#DATABASES = db.MYSQL
+#DATABASES = db.MSSQL
 
 
 # Password validation
