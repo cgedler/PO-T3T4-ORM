@@ -27,7 +27,7 @@ php artisan serve
 app/
 │── Models/        ← Eloquent ORM
 │── Http/
-│     └── Controllers/  → l&#243;gica
+│     └── Controllers/  → lógica
 database/
 │── migrations/    ← Migraciones
 routes/
@@ -80,7 +80,7 @@ class Estudiante extends Model
 {
     protected $fillable = ['nombre', 'cedula'];
 
-    // Relaci&#243;n: Un estudiante se inscribe en muchas materias (Equivalente al ManyToManyField)
+    // Relación: Un estudiante se inscribe en muchas materias (Equivalente al ManyToManyField)
     public function materias(): BelongsToMany
     {
         return $this->belongsToMany(Materia::class, 'estudiante_materia');
@@ -102,13 +102,13 @@ class Materia extends Model
 {
     protected $fillable = ['nombre', 'codigo', 'profesor_id'];
 
-    // Relaci&#243;n: Una materia pertenece a un profesor
+    // Relación: Una materia pertenece a un profesor
     public function profesor(): BelongsTo
     {
         return $this->belongsTo(Profesor::class, 'profesor_id');
     }
 
-    // Relaci&#243;n: Una materia pertenece a muchos estudiantes (Inversa de la relaci&#243;n N:N)
+    // Relación: Una materia pertenece a muchos estudiantes (Inversa de la relación N:N)
     public function estudiantes(): BelongsToMany
     {
         return $this->belongsToMany(Estudiante::class, 'estudiante_materia');
@@ -127,12 +127,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Profesor extends Model
 {
-    // Laravel asume que la tabla se llama 'profesors' por el inglés, as&#237; que especificamos el nombre en espa&#241;ol:
+    // Laravel asume que la tabla se llama 'profesors' por el inglés, así; que especificamos el nombre en español:
     protected $table = 'profesores';
     
     protected $fillable = ['nombre', 'apellido', 'especialidad'];
 
-    // Relaci&#243;n: Un profesor tiene muchas materias (Equivalente al related_name='materias')
+    // Relación: Un profesor tiene muchas materias (Equivalente al related_name='materias')
     public function materias(): HasMany
     {
         return $this->hasMany(Materia::class, 'profesor_id');
@@ -165,7 +165,7 @@ public function up()
 
 
     Schema::create('profesores', function (Blueprint $table) {
-        $table->id(); // Autoincremental (equivalente al id autom&#225;tico de Django)
+        $table->id(); // Autoincremental (equivalente al id automático de Django)
         $table->string('nombre', 100);
         $table->string('apellido', 100);
         $table->string('especialidad', 100);
@@ -175,9 +175,9 @@ public function up()
     Schema::create('materias', function (Blueprint $table) {
         $table->id();
         $table->string('nombre', 100);
-        $table->string('codigo', 20)->unique(); // Restricci&#243;n UNIQUE
+        $table->string('codigo', 20)->unique(); // Restricción UNIQUE
     
-        // Llave for&#225;nea (Equivalente al ForeignKey con on_delete=models.CASCADE)
+        // Llave foránea (Equivalente al ForeignKey con on_delete=models.CASCADE)
         $table->foreignId('profesor_id')->constrained('profesores')->onDelete('cascade');
         $table->timestamps();
     });
@@ -186,7 +186,7 @@ public function up()
     Schema::create('estudiantes', function (Blueprint $table) {
         $table->id();
         $table->string('nombre', 100);
-        $table->string('cedula', 15)->unique(); // Restricci&#243;n UNIQUE
+        $table->string('cedula', 15)->unique(); // Restricción UNIQUE
         $table->timestamps();
     });
 
@@ -272,7 +272,7 @@ Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Académico - @yield('titulo')</title>
-    <!-- Aqu&#237; podr&#237;as meter Bootstrap o Tailwind -->
+    <!-- Aquí podrías meter Bootstrap o Tailwind -->
     <style>
         body { font-family: sans-serif; background: #f4f6f9; padding: 20px; }
         nav { background: #343a40; padding: 10px; border-radius: 5px; }
@@ -289,7 +289,7 @@ Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
     </nav>
 
     <div class="contenido">
-        <!-- @yield le dice a Laravel: "Aqu&#237; va el contenido din&#225;mico" -->
+        <!-- @yield le dice a Laravel: "Aquí va el contenido dinámico" -->
         @yield('contenido')
     </div>
 
@@ -306,7 +306,7 @@ Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
 <!-- 2. Pasamos un texto simple al yield 'titulo' -->
 @section('titulo', 'Lista de Profesores')
 
-<!-- 3. Abrimos la secci&#243;n para el bloque de contenido -->
+<!-- 3. Abrimos la sección para el bloque de contenido -->
 @section('contenido')
     <h2>Panel de Profesores</h2>
     <p>Bienvenidos al listado oficial de la facultad.</p>

@@ -260,7 +260,7 @@ class InscripcionForm(forms.ModelForm):
     class Meta:
         model = Estudiante
         fields = ['nombre', 'cedula', 'materias']
-        # Usamos widgets para aplicar clases de Bootstrap y mejorar el dise&#241;o
+        # Usamos widgets para aplicar clases de Bootstrap y mejorar el diseño
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'cedula': forms.TextInput(attrs={'class': 'form-control'}),
@@ -294,13 +294,13 @@ def inscripcion_view(request):
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inscripci&#243;n de Estudiantes</title>
+    <title>Inscripción de Estudiantes</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body class="container mt-5">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
-            <h3 class="mb-0">Nueva Inscripci&#243;n</h3>
+            <h3 class="mb-0">Nueva Inscripción</h3>
         </div>
         <div class="card-body">
             <form method="post">

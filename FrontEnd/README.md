@@ -110,7 +110,7 @@ export class AppComponent {
 
 <hr>
 
-<!-- Aqu&#237; es donde se cargar&#225;n tus componentes din&#225;micamente -->
+<!-- Aquí es donde se cargarán tus componentes dinámicamente -->
 <router-outlet></router-outlet>
 
 ```
@@ -119,7 +119,7 @@ export class AppComponent {
 
 ```css
 
-/* T&#237;tulo principal */
+/* Título principal */
 h1 {
   text-align: center;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -129,7 +129,7 @@ h1 {
   margin-bottom: 25px;
 }
 
-/* Barra de navegaci&#243;n */
+/* Barra de navegación */
 .navbar {
   display: flex;
   justify-content: center;
@@ -276,7 +276,7 @@ export class ListaEstudiantesComponent implements OnInit {
   font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-/* T&#237;tulo */
+/* Título */
 .container h1 {
   text-align: center;
   color: #2c3e50;
@@ -323,7 +323,7 @@ tbody tr:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Mensaje vac&#237;o */
+/* Mensaje vacío */
 td[colspan="2"] {
   text-align: center;
   color: #555;
@@ -380,7 +380,7 @@ export class FormularioEstudianteComponent {
         next: (res) => {
           alert('Estudiante creado con éxito');
           this.estudianteForm.reset(); // Limpia el formulario
-          // Aqu&#237; podr&#237;as llamar de nuevo a getEstudiantes() para refrescar la tabla
+          // Aquí podrías llamar de nuevo a getEstudiantes() para refrescar la tabla
         },
         error: (err) => console.error('Error al crear', err)
       });
@@ -420,7 +420,7 @@ export class FormularioEstudianteComponent {
     </form>
 
     <hr>
-    <!-- Aqu&#237; abajo seguir&#237;a tu tabla de estudiantes para ver los resultados -->
+    <!-- Aquí abajo seguiría tu tabla de estudiantes para ver los resultados -->
 </div>
 
 <!--
@@ -448,7 +448,7 @@ export class FormularioEstudianteComponent {
   font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-/* T&#237;tulo */
+/* Título */
 .container h2 {
   text-align: center;
   color: #2c3e50;
@@ -487,7 +487,7 @@ input[type="text"]:focus {
   outline: none;
 }
 
-/* Mensajes de validaci&#243;n */
+/* Mensajes de validación */
 small {
   display: block;
   margin-top: 4px;
@@ -502,7 +502,7 @@ small:not([style*="color: red"]) {
   color: #2ecc71;
 }
 
-/* Bot&#243;n */
+/* Botón */
 button[type="submit"] {
   align-self: center;
   background-color: #0078d4;
@@ -544,7 +544,7 @@ import { FormularioEstudianteComponent } from './formulario-estudiante/formulari
 export const routes: Routes = [
     { path: 'lista', component: ListaEstudiantesComponent },              // Ruta por defecto
     { path: 'registro', component: FormularioEstudianteComponent },   // Ruta del formulario
-    { path: '**', redirectTo: '' }                                    // Comod&#237;n para rutas no encontradas
+    { path: '**', redirectTo: '' }                                    // Comodín para rutas no encontradas
 ];
 
 ```

@@ -25,14 +25,14 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 8
 
 SistemaAcademico/
 │
-├── Controllers/                # L&#243;gica de control (Endpoints de la API)
+├── Controllers/                # Lógica de control (Endpoints de la API)
 │   └── EstudiantesController.cs
 │
 ├── Data/                       # Todo lo relacionado con la persistencia
 │   ├── UniversidadContext.cs   # El DbContext de EF Core
 │   └── SeedData.cs             # (Opcional) Clase para la carga inicial
 │
-├── Migrations/                 # Generada autom&#225;ticamente por EF Core
+├── Migrations/                 # Generada automáticamente por EF Core
 │   └── 20260428_InitialCreate.cs
 │
 ├── Models/                     # Clases de dominio (POCOs)
@@ -41,10 +41,10 @@ SistemaAcademico/
 │   └── Materia.cs
 │
 ├── Properties/
-│   └── launchSettings.json     # Configuraci&#243;n de puertos y ejecuci&#243;n
+│   └── launchSettings.json     # Configuración de puertos y ejecución
 │
-├── appsettings.json            # Cadenas de conexi&#243;n y configuraci&#243;n global
-├── Program.cs                  # Configuraci&#243;n de la App e Inyecci&#243;n de Dependencias
+├── appsettings.json            # Cadenas de conexión y configuración global
+├── Program.cs                  # Configuración de la App e Inyección de Dependencias
 └── universidad.db              # Base de datos SQLite (se crea al ejecutar)
 
 ```
@@ -68,7 +68,7 @@ public class Profesor {
     public string? Email { get; set; }
     public string? Especialidad { get; set; }
     
-    // Relaci&#243;n: Un profesor tiene muchas materias
+    // Relación: Un profesor tiene muchas materias
     public List<Materia> Materias { get; set; } = [];
 }
 
@@ -84,11 +84,11 @@ public class Materia {
     public int Id { get; set; }
     public required string Nombre { get; set; }
     
-    // Clave For&#225;nea autom&#225;tica
+    // Clave Foránea automática
     public int ProfesorId { get; set; }
     public Profesor Profesor { get; set; } = null!;
 
-    // Relaci&#243;n: Una materia tiene muchos estudiantes
+    // Relación: Una materia tiene muchos estudiantes
     public List<Estudiante> Estudiantes { get; set; } = [];
 }
 ```
@@ -105,7 +105,7 @@ public class Estudiante {
     [MaxLength(15)]
     public required string Cedula { get; set; }
 
-    // Relaci&#243;n Muchos a Muchos
+    // Relación Muchos a Muchos
     public List<Materia> Materias { get; set; } = [];
 }
 
@@ -150,7 +150,7 @@ var app = builder.Build();
 // MAPEAR LAS RUTAS DE LOS CONTROLADORES
 app.MapControllers();
 
-// Crear la base de datos autom&#225;ticamente si no existe
+// Crear la base de datos automáticamente si no existe
 using (var scope = app.Services.CreateScope()) {
     var db = scope.ServiceProvider.GetRequiredService<UniversidadContext>();
     db.Database.EnsureCreated();
@@ -296,7 +296,7 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CLAVE SECRETA (En producci&#243;n, esto va en appsettings.json o Variables de Entorno)
+// CLAVE SECRETA (En producción, esto va en appsettings.json o Variables de Entorno)
 var key = Encoding.ASCII.GetBytes("EstaDebeSerUnaClaveMuyLargaYSuperSecreta2026");
 
 builder.Services.AddAuthentication(x => {

@@ -54,12 +54,12 @@ $ npm install --save oracledb # Oracle Database
 
 ```shell
 src/
-│── config/        ← Configuraci&#243;n de DB y variables de entorno.
-│── controllers/        ← L&#243;gica de negocio.
-│── logs/        ← Logs de la aplicaci&#243;n.
-│── middleware/        ← L&#243;gica de logs.
-│── models/        ← Definici&#243;n de las tablas como objetos.
-│── routes/        ← Definici&#243;n de los endpoints.
+│── config/        ← Configuración de DB y variables de entorno.
+│── controllers/        ← Lógica de negocio.
+│── logs/        ← Logs de la aplicación.
+│── middleware/        ← Lógica de logs.
+│── models/        ← Definición de las tablas como objetos.
+│── routes/        ← Definición de los endpoints.
 │── services/        ← Servicios.
 ```
 
