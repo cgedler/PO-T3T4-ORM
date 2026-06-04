@@ -141,34 +141,38 @@ export default db;
 
 ```javascript
 
-import Sequelize from 'sequelize';
-import config from './environment.js';
+import { DataTypes } from 'sequelize';
+import db from '../config/database.js';
 
-import { MSSql } from './mssql.connection.js';
-import { MySql } from './mysql.connection.js';
-import { Postgres } from './postgres.connection.js';
-//import { SQLite } from './sqlite.connection.js';
 
-var db;
+const Role = {
+    ADMIN: "ADMIN",
+    USER: "USER"
+};
 
-switch(config.database.dialect) {
-  case 'mssql':
-    db = MSSql;
-    break;
-  case 'mysql':
-    db = MySql;
-    break;
-  case 'postgres':
-    db = Postgres;
-    break;
-  //case 'sqlite':
-    //db = SQLite;
-    //break;
-  default:
-    console.error('Unable to connect to the database - HandlerDB');
-}
+const User = db.define('system.users', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.STRING
+    },
+    role: {
+        type: DataTypes.ENUM(Role.ADMIN, Role.USER)
+    }
+});
 
-export default db;
+export default User;
 
 ```
 
